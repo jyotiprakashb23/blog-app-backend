@@ -1,0 +1,16 @@
+# version: '3'
+services:
+  backend:
+    build:
+      context: ./
+    ports:
+      - "8000:7000"
+    # depends_on:
+    #   - mongodb
+    environment:
+      - mongodb+srv://jyotiprakashb23:iaiIxtzJS0xzVfJe@mycluster.ufqo4.mongodb.net/?retryWrites=true&w=majority&appName=myCluster
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
